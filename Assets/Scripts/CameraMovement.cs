@@ -39,15 +39,15 @@ public class CameraMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!isInteracting) { return; }
-        // Only execute the following code if the button is pressed
-        RaycastHit hit;
-        Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, interactRange))
-        {
-            // For testing only
-            hit.transform.gameObject.SetActive(false);
-        }
         isInteracting = false;
 
+        RaycastHit hit;
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out hit, interactRange)) { return; }
+
+        GameObject gameObject = hit.transform.gameObject;
+        if (gameObject.GetComponent<Interactable>() == null) { return; }
+
+        gameObject.GetComponent<Interactable>().Interact(player);
     }
 }

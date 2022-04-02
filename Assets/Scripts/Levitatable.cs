@@ -56,7 +56,7 @@ public class Levitatable : Interactable
         isLevitating = false;
     }
 
-    protected override void Interact(GameObject player)
+    public override void Interact(GameObject player)
     {
         base.Interact(player);
 

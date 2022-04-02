@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
 
     }
 
-    protected virtual void Interact(GameObject player)
+    public virtual void Interact(GameObject player)
     {
 
     }

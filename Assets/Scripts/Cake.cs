@@ -34,7 +34,7 @@ public class Cake : Interactable
 
     }
 
-    protected override void Interact(GameObject player)
+    public override void Interact(GameObject player)
     {
         base.Interact(player);
 
