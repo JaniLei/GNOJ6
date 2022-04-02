@@ -10,6 +10,8 @@ public class LevitationEvent : MagicEvent
     {
         base.Start();
 
+        this.magicType = MagicTypes.Levitation;
+
         levitatables = new List<Levitatable>(GameObject.FindObjectsOfType<Levitatable>());
     }
 
@@ -23,10 +25,12 @@ public class LevitationEvent : MagicEvent
     {
         base.StartMagicEvent();
 
+        // choose x amount of random levitatable objects?
         foreach (var item in levitatables)
         {
             item.StartLevitate();
         }
+        Invoke("StopMagicEvent", 8/*longer based on intensity?*/);
     }
 
     protected override void StopMagicEvent()
