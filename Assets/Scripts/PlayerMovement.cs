@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-        Vector3 movement = transform.forward * y + transform.right * x;
+        Vector3 movement = transform.forward * y + transform.right * x + transform.up * -9f;
 
         character.Move(movement);
     }

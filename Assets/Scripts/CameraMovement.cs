@@ -69,7 +69,7 @@ public class CameraMovement : MonoBehaviour
         Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out hit, interactRange))
         {
-            InteractionText.text = "";
+            InteractionText.text = "X";
             return;
         }
 
@@ -77,7 +77,7 @@ public class CameraMovement : MonoBehaviour
         var interactable = gameObject.GetComponent<Interactable>();
         if (interactable == null)
         {
-            InteractionText.text = "";
+            InteractionText.text = "X";
             return;
         }
 
