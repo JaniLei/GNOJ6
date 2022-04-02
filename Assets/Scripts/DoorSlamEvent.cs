@@ -22,9 +22,11 @@ public class DoorSlamEvent : MagicEvent
     {
         base.Start();
 
+        this.magicType = MagicTypes.DoorSlam;
+
         magicSys = GameObject.FindObjectOfType<MagicSystem>();
         hinge = transform.parent.gameObject;
-        hinge.transform.Rotate(Vector3.forward * 140);
+        hinge.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 140));
         currentState = DoorState.Open;
     }
 
@@ -50,24 +52,24 @@ public class DoorSlamEvent : MagicEvent
     {
         if (isMoving) return;
 
-        if (other.tag == "Player")
+        if (other.name/*change to tag?*/ == "Player")
         {
             if (magicSys.MagicVars.Intensity > 0)
             {
                 int slamRoll = Random.Range(0, 100);
                 if (slamRoll <= 10)
-                    SlamDoor();
+                    SlamDoor(5);
             }
         }
     }
 
-    public void SlamDoor()
+    public void SlamDoor(float time)
     {
         isMoving = true;
         moveDir = -1;
         moveSpeed = 200;
 
-        Invoke("OpenDoor", 1 + (magicSys.MagicVars.Intensity * 0.03f));
+        Invoke("OpenDoor", time);
     }
 
     public void OpenDoor()

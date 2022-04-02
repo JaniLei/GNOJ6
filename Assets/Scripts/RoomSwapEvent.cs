@@ -12,6 +12,8 @@ public class RoomSwapEvent : MagicEvent
     {
         base.Start();
 
+        this.magicType = MagicTypes.RoomSwap;
+
         rooms = new List<GameObject>(GameObject.FindGameObjectsWithTag("Room"));
         doors = new List<GameObject>(GameObject.FindGameObjectsWithTag("Door"));
     }
@@ -29,7 +31,7 @@ public class RoomSwapEvent : MagicEvent
         if (e.MagicType == this.magicType)
         {
             CloseDoors();
-            SwapRooms();
+            Invoke("SwapRooms", 5);
         }
     }
 
@@ -37,31 +39,46 @@ public class RoomSwapEvent : MagicEvent
     {
         foreach (var door in doors)
         {
-            door.GetComponent<DoorSlamEvent>().SlamDoor();
+            door.GetComponent<DoorSlamEvent>().SlamDoor(6);
         }
     }
 
     private void SwapRooms()
     {
-        List<Transform> roomTransforms = new List<Transform>();
+        List<Vector3> roomPositions = new List<Vector3>();
+        List<Quaternion> roomRotations = new List<Quaternion>();
         foreach (var room in rooms)
-            roomTransforms.Add(room.transform);
-        roomTransforms = ShuffleTransforms(roomTransforms);
+        {
+            int randNum = Random.Range(0, 2);
+            if (randNum == 0)
+            {
+                roomPositions.Add(room.transform.position);
+                roomRotations.Add(room.transform.rotation);
+            }
+            else
+            {
+                roomPositions.Insert(0, room.transform.position);
+                roomRotations.Insert(0, room.transform.rotation);
+            }
+        }
+        //roomTransforms = ShuffleTransforms(roomTransforms);
 
         for (int i = 0; i < rooms.Count; i++)
         {
-            rooms[i].transform.SetPositionAndRotation(roomTransforms[i].position, roomTransforms[i].rotation);
+            rooms[i].transform.SetPositionAndRotation(roomPositions[i], roomRotations[i]);
         }
     }
 
     private List<Transform> ShuffleTransforms(List<Transform> list)
     {
-        for (int i = 0; i < list.Count; i++)
+        int n = list.Count;
+        while (n > 1)
         {
-            var temp = list[i];
-            int randomIndex = Random.Range(i, list.Count);
-            list[i] = list[randomIndex];
-            list[randomIndex] = temp;
+            n--;
+            int k = Random.Range(0, n + 1);
+            var temp = list[k];
+            list[k] = list[n];
+            list[n] = temp;
         }
         return list;
     }
