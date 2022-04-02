@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 139
+  controlID: 79
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 518
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 81
+  controlID: 88
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 82
+  controlID: 89
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Projects\Unity Projects\Wizard Neighbour
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 183e0000
-    m_LastClickedID: 15896
-    m_ExpandedIDs: 00000000063e0000103e000000ca9a3b
+    m_SelectedIDs: 2e410000
+    m_LastClickedID: 16686
+    m_ExpandedIDs: 00000000e4400000e640000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000063e0000
+    m_ExpandedIDs: 00000000e4400000e6400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -483,21 +483,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28cefeff607fffff9086ffffda88ffffac8affffaa8cffff1cb2ffff20b2ffff06fbffff10fbffff2cfbffff3efbffff48fbffff6cfbffff
+      m_ExpandedIDs: 24f3ffffeef5fffff0f5ffffe0f6ffff70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Stove
+        m_OriginalName: Stove
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 16824
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.6058517, y: 2.1979861, z: 0.052670598}
+    m_Target: {x: 0.82306784, y: 0.48060936, z: 0.6755262}
     speed: 2
-    m_Value: {x: 2.6058517, y: 2.1979861, z: 0.052670598}
+    m_Value: {x: 0.82306784, y: 0.48060936, z: 0.6755262}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -592,13 +592,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.07791923, y: 0.90317625, z: -0.18575662, w: 0.3792736}
+    m_Target: {x: 0.0033751747, y: 0.96757936, z: -0.25254324, w: 0.01312987}
     speed: 2
-    m_Value: {x: 0.077355705, y: 0.904241, z: -0.18597536, w: 0.37653363}
+    m_Value: {x: 0.003374885, y: 0.96749634, z: -0.25252157, w: 0.0131287435}
   m_Size:
-    m_Target: 3.0662177
+    m_Target: 1.7051963
     speed: 2
-    m_Value: 3.0662177
+    m_Value: 1.7051963
   m_Ortho:
     m_Target: 0
     speed: 2

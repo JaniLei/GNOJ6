@@ -50,7 +50,7 @@ public class DoorSlamEvent : MagicEvent
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isMoving) return;
+        if (isMoving || currentState == DoorState.Close) return;
 
         if (other.name/*change to tag?*/ == "Player")
         {
@@ -63,11 +63,11 @@ public class DoorSlamEvent : MagicEvent
         }
     }
 
-    public void SlamDoor(float time)
+    public void SlamDoor(float time, int speed = 300)
     {
         isMoving = true;
         moveDir = -1;
-        moveSpeed = 200;
+        moveSpeed = speed;
 
         Invoke("OpenDoor", time);
     }

@@ -7,6 +7,8 @@ public enum CakeIngredientType
     Egg,
     Flour,
     Milk,
+    Spatula,
+    Mixer,
     Cherry
 }
 
@@ -17,7 +19,7 @@ public class CakeIngredient : Interactable
     // Start is called before the first frame update
     void Start()
     {
-
+        InteractionText = "Pick up";
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class CakeIngredient : Interactable
         base.Interact(player);
 
         //player -> add to inventory (IngredientType)
+        player.GetComponent<PlayerInventory>().CollectedIngredients.Add(this.IngredientType);
         gameObject.SetActive(false);
     }
 }

@@ -12,6 +12,8 @@ public class Levitatable : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        InteractionText = "";
+
         rb = gameObject.GetComponent<Rigidbody>();
         if (rb == null)
             rb = gameObject.AddComponent<Rigidbody>();
@@ -39,6 +41,7 @@ public class Levitatable : Interactable
         isLevitating = true;
         rb.useGravity = false;
         rb.AddForce(Vector3.up * 20, ForceMode.Acceleration);
+        InteractionText = "Return";
     }
 
     public void StopLevitate()
@@ -47,6 +50,8 @@ public class Levitatable : Interactable
         {
             isLevitating = false;
             rb.useGravity = true;
+
+            InteractionText = "";
         }
     }
 
@@ -54,6 +59,7 @@ public class Levitatable : Interactable
     {
         isReturning = true;
         isLevitating = false;
+        InteractionText = "";
     }
 
     public override void Interact(GameObject player)

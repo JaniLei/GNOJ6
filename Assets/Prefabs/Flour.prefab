@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5507830674628087474}
   - component: {fileID: 8917238606439514391}
   - component: {fileID: 6639592338138789341}
-  - component: {fileID: 6216603701147360755}
   - component: {fileID: 6803692829519436256}
+  - component: {fileID: 3007431913108619898}
   m_Layer: 0
   m_Name: Flour
   m_TagString: Untagged
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6216603701147360755
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5126343761261319176}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 690106047850165013, guid: 00a02a2e7d56176409588398c7801dff, type: 3}
 --- !u!114 &6803692829519436256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientType: 1
+--- !u!65 &3007431913108619898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126343761261319176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.84326184, y: 0.51563156, z: 1.0021392}
+  m_Center: {x: -0.0029300004, y: -0.003651009, z: 0.5010696}
