@@ -77,6 +77,10 @@ public class Cake : Interactable
                 if (inv.CollectedIngredients.Contains(CakeIngredientType.Spatula))
                     return true;
                 break;
+            case CakeProcess.Frosted:
+                if (inv.CollectedIngredients.Contains(CakeIngredientType.Cherry))
+                    return true;
+                break;
             default:
                 break;
         }
@@ -118,6 +122,8 @@ public class Cake : Interactable
                 return "Find filling tool";
             case CakeProcess.Filled:
                 return "Find frosting tool";
+            case CakeProcess.Frosted:
+                return "Find toppings";
             default:
                 return base.GetInteractionText();
         }

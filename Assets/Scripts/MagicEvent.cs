@@ -20,12 +20,12 @@ public class MagicEvent : MonoBehaviour
     protected virtual void OnTriggerMagic(object sender, MagicEventArgs e)
     {
         if (e.MagicType == this.magicType)
-            StartMagicEvent();
+            StartMagicEvent(e);
         else if (e.MagicType == MagicTypes.RoomSwap)
             StopMagicEvent();
     }
 
-    protected virtual void StartMagicEvent()
+    protected virtual void StartMagicEvent(MagicEventArgs args)
     {
 
     }

@@ -30,16 +30,16 @@ public class RoomSwapEvent : MagicEvent
 
         if (e.MagicType == this.magicType)
         {
-            CloseDoors();
+            CloseDoors(5 + (e.Intensity * 0.05f));
             Invoke("SwapRooms", 5);
         }
     }
 
-    private void CloseDoors()
+    private void CloseDoors(float time)
     {
         foreach (var door in doors)
         {
-            door.GetComponent<DoorSlamEvent>().SlamDoor(6);
+            door.GetComponent<DoorSlamEvent>().SlamDoor(time);
         }
     }
 
