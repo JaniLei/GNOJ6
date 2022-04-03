@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DoorSlamEvent : MagicEvent
 {
     private enum DoorState
@@ -16,11 +17,14 @@ public class DoorSlamEvent : MagicEvent
     private int moveDir;
     private int moveSpeed = 200;
     private float movedAmount;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+
+        audioSource = GetComponent<AudioSource>();
 
         this.magicType = MagicTypes.DoorSlam;
 
@@ -68,6 +72,8 @@ public class DoorSlamEvent : MagicEvent
         isMoving = true;
         moveDir = -1;
         moveSpeed = speed;
+
+        audioSource.Play();
 
         Invoke("OpenDoor", time);
     }
