@@ -83,7 +83,8 @@ public class MagicSystem : MonoBehaviour
         if (MagicVars.Intensity >= 100)
         {
             //GAME OVER!
-            Application.Quit();
+            var gameState = FindObjectOfType<GameStateManager>();
+            gameState.StartGameOver();
         }
     }
 

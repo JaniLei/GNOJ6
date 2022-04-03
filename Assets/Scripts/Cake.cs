@@ -100,7 +100,8 @@ public class Cake : Interactable
 
         if (currentProcess == CakeProcess.Finished)
         {
-            // Game is over. Victory!
+            var gameState = FindObjectOfType<GameStateManager>();
+            gameState.StartVictory();
         }
     }
 
