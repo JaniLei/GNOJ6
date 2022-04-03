@@ -45,6 +45,7 @@ public class DoorSlamEvent : MagicEvent
 
             if (movedAmount >= 140)
             {
+                audioSource.Play();
                 isMoving = false;
                 currentState = (currentState == DoorState.Open) ? DoorState.Close : DoorState.Open;
                 movedAmount = 0;
@@ -72,8 +73,6 @@ public class DoorSlamEvent : MagicEvent
         isMoving = true;
         moveDir = -1;
         moveSpeed = speed;
-
-        audioSource.Play();
 
         Invoke("OpenDoor", time);
     }
