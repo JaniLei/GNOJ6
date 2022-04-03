@@ -8,7 +8,9 @@ public class Stove : Interactable
     private bool isBaking;
     private float bakingTimer;
 
-    public int BakingTimeSeconds = 60;
+    public int BakingTimeSeconds = 30;
+
+    public GameObject mixer, spatula, cherry;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +45,7 @@ public class Stove : Interactable
     private void StartBaking()
     {
         isBaking = true;
-        cake.gameObject.transform.position = transform.position;
+        cake.gameObject.transform.position = new Vector3(0f, -200f, 0f);
         // oven light?
     }
 
@@ -52,6 +54,9 @@ public class Stove : Interactable
         cake.SetNextState();
         cake.ReturnToOrigin();
         isBaking = false;
+        mixer.SetActive(true);
+        spatula.SetActive(true);
+        cherry.SetActive(true);
     }
 
     public override string GetInteractionText()

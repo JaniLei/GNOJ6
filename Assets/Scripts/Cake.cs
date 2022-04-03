@@ -19,7 +19,6 @@ public class Cake : Interactable
     private MagicSystem magicSystem;
 
     public GameObject[] CakeObjects = new GameObject[6];
-    public GameObject mixer, spatula, cherry;
 
     // Start is called before the first frame update
     void Start()
@@ -67,9 +66,6 @@ public class Cake : Interactable
                     inv.CollectedIngredients.Contains(CakeIngredientType.Flour) &&
                     inv.CollectedIngredients.Contains(CakeIngredientType.Milk))
                 {
-                    mixer.SetActive(true);
-                    spatula.SetActive(true);
-                    cherry.SetActive(true);
                     return true;
                 }
                 break;

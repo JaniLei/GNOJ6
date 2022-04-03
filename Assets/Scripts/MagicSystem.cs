@@ -33,6 +33,9 @@ public class MagicSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        IncreaseEscalation(1);
+
         if (EscalationText != null)
             EscalationText.text = $"Escalation: {MagicVars.Escalation}";
         if (IntensitySlider != null)
