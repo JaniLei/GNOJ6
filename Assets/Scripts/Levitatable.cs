@@ -42,6 +42,7 @@ public class Levitatable : Interactable
         rb.useGravity = false;
         rb.AddForce(Vector3.up * 20, ForceMode.Acceleration);
         InteractionText = "Return";
+        GetComponentInChildren<ParticleSystem>().Play();
     }
 
     public void StopLevitate()
@@ -52,6 +53,7 @@ public class Levitatable : Interactable
             rb.useGravity = true;
 
             InteractionText = "";
+            GetComponentInChildren<ParticleSystem>().Stop();
         }
     }
 
@@ -60,6 +62,7 @@ public class Levitatable : Interactable
         isReturning = true;
         isLevitating = false;
         InteractionText = "";
+        GetComponentInChildren<ParticleSystem>().Stop();
     }
 
     public override void Interact(GameObject player)

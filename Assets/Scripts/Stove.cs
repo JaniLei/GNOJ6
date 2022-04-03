@@ -11,6 +11,7 @@ public class Stove : Interactable
     public int BakingTimeSeconds = 30;
 
     public GameObject mixer, spatula, cherry;
+    public MagicSystem magicSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,7 @@ public class Stove : Interactable
         mixer.SetActive(true);
         spatula.SetActive(true);
         cherry.SetActive(true);
+        magicSystem.CallSwapRooms();
     }
 
     public override string GetInteractionText()

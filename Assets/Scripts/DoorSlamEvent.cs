@@ -59,12 +59,9 @@ public class DoorSlamEvent : MagicEvent
 
         if (other.name/*change to tag?*/ == "Player")
         {
-            if (magicSys.MagicVars.Intensity > 0)
-            {
-                int slamRoll = Random.Range(0, 100);
-                if (slamRoll <= 10)
-                    SlamDoor(3 + (magicSys.MagicVars.Intensity * 0.05f));
-            }
+            int slamRoll = Random.Range(0, 100);
+            if (slamRoll <= 10)
+                SlamDoor(3 + (magicSys.MagicVars.Intensity * 0.05f));
         }
     }
 
