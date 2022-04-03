@@ -62,7 +62,7 @@ public class DoorSlamEvent : MagicEvent
             {
                 int slamRoll = Random.Range(0, 100);
                 if (slamRoll <= 10)
-                    SlamDoor(5);
+                    SlamDoor(3 + (magicSys.MagicVars.Intensity * 0.05f));
             }
         }
     }

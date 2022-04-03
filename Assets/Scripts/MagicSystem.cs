@@ -57,6 +57,13 @@ public class MagicSystem : MonoBehaviour
         }
     }
 
+    public void CallSwapRooms()
+    {
+        MagicVars.MagicType = MagicTypes.RoomSwap;
+        OnTriggerMagic(MagicVars);
+        timer = 0;
+    }
+
     protected virtual void OnTriggerMagic(MagicEventArgs e)
     {
         TriggerMagic?.Invoke(this, e);

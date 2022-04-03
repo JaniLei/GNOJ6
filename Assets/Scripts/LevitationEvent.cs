@@ -21,16 +21,16 @@ public class LevitationEvent : MagicEvent
 
     }
 
-    protected override void StartMagicEvent()
+    protected override void StartMagicEvent(MagicEventArgs args)
     {
-        base.StartMagicEvent();
+        base.StartMagicEvent(args);
 
         // choose x amount of random levitatable objects?
         foreach (var item in levitatables)
         {
             item.StartLevitate();
         }
-        Invoke("StopMagicEvent", 8/*longer based on intensity?*/);
+        Invoke("StopMagicEvent", 5 + (args.Intensity * 0.05f));
     }
 
     protected override void StopMagicEvent()
